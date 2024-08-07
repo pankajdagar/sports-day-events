@@ -1,0 +1,13 @@
+.events-list-container {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .events-list-container {
+    flex-direction: column-reverse;
+    padding: 10px;
+    gap: 10px;
+  }
+}
