@@ -38,7 +38,7 @@ test("displays event details", () => {
 
   expect(screen.getByText(/Butterfly 100M/i)).toBeInTheDocument();
   expect(screen.getByText(/Swimming/i)).toBeInTheDocument();
-  expect(screen.getByText(/1 PM - 2 PM/i)).toBeInTheDocument();
+  expect(screen.getByText(/1:00 PM - 2:00 PM/i)).toBeInTheDocument();
 });
 
 test("displays select button when event is not selected", () => {

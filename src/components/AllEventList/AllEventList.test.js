@@ -78,3 +78,19 @@ test("does not display selected events", () => {
   expect(screen.queryByText(/Butterfly 100M/i)).not.toBeInTheDocument();
   expect(screen.getByText(/Backstroke 100M/i)).toBeInTheDocument();
 });
+
+test("renders all events and hides selected events when checkbox is checked", () => {
+  renderComponent({
+    selectedEventIds: { 1: true },
+  });
+
+  expect(screen.getByText("Hide selected events")).toBeInTheDocument();
+
+  fireEvent.click(screen.getByTestId("hide-selected-checkbox"));
+
+  expect(screen.getByText(/Backstroke 100M/i)).toBeInTheDocument();
+  expect(screen.getByText(/Butterfly 100M/i)).toBeInTheDocument();
+
+  fireEvent.click(screen.getByTestId("hide-selected-checkbox"));
+  expect(screen.queryByText(/Butterfly 100M/i)).not.toBeInTheDocument();
+});
