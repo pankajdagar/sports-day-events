@@ -27,8 +27,9 @@ const EventCard = ({
           <div className="event-name">{event.event_name}</div>
           <div className="event-category">({event.event_category})</div>
           <div className="event-timing">
-            {convertTo12HourFormat(event.start_time)} -{" "}
-            {convertTo12HourFormat(event.end_time)}
+            {`${convertTo12HourFormat(
+              event.start_time
+            )} - ${convertTo12HourFormat(event.end_time)}`}
           </div>
         </div>
         <div>
